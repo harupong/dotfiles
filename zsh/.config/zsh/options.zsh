@@ -1,6 +1,3 @@
-# Load completions
-autoload -U compinit && compinit
-
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -33,3 +30,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Python related
 PATH=$(python3 -m site --user-base)/bin:$PATH; export PATH
+
+# Load completions
+autoload -U compinit && compinit
+

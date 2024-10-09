@@ -1,5 +1,7 @@
-# Aliases
+# Misc.
 alias ls="eza --all --icons=always"
 alias cat="bat --paging=never"
-#alias nvim="NVIM_APPNAME=kickstart nvim"
-#alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+
+# Git
+alias gs="git status"
+alias gld="git log -p" #show git log with diff
