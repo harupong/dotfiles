@@ -28,6 +28,7 @@ config.window_frame = {
 
 config.color_scheme = "Catppuccin Latte"
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false -- this must be false to use michaelbrusegard/tabline.wez
 config.native_macos_fullscreen_mode = true
 config.window_close_confirmation = "NeverPrompt"
 
@@ -48,9 +49,21 @@ config.keys = {
 		action = wezterm.action.SpawnCommandInNewTab({
 			cwd = wezterm.home_dir,
 			args = { "nvim", wezterm.config_file },
-			set_environment_variables = { NVIM_APPNAME = "kickstart" },
 		}),
 	},
 }
+
+-- PLUGINS
+-- -- tab bar plugin. this MUST come after color_scheme is set
+-- local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+-- bar.apply_to_config(config, { position = "top" })
+
+-- another tab bar plugin
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		theme = "Catppuccin Latte",
+	},
+})
 
 return config
